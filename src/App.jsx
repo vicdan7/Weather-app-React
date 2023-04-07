@@ -66,7 +66,7 @@ function App() {
     <div
       className="App"
       style={{
-        backgroundImage: `url(src/assets/image/${
+        backgroundImage: `url(./assets/image/${
           weat?.weather[0].icon || "02d"
         }.jpg)`,
       }}
