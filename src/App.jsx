@@ -11,6 +11,7 @@ function App() {
   const [weat, setWeat] = useState();
   const [temperature, setTemperature] = useState();
   const [location, setLocation] = useState("");
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     const success = (position) => {
@@ -50,6 +51,7 @@ function App() {
         `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${apiK}`
       )
       .then((response) => {
+        setError(false);
         const celsius = (response.data.main.temp - 273.15).toFixed(1);
         const farenheit = ((celsius * 9) / 5 + 32).toFixed(1);
 
@@ -59,6 +61,8 @@ function App() {
       })
       .catch((err) => {
         console.log(err);
+        setError(true);
+        setLocation("");
       });
   };
 
@@ -78,6 +82,7 @@ function App() {
           type="text"
           value={location}
           onChange={(e) => setLocation(e.target.value)}
+          onClick={() => setError(false)}
           placeholder="CIUDAD"
         />
 
@@ -85,6 +90,7 @@ function App() {
           Search
         </button>
       </form>
+      {error && <p className="error-text"> 🚫🚨City Not Found 🚨🚫</p>}
       {weat ? (
         <WeatherCard weat={weat} temperature={temperature} />
       ) : (
