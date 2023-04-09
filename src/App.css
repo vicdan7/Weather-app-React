@@ -132,6 +132,63 @@ h5 {
     0px 0px 20px #b393d3;
 }
 
+#loader {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  background-color: #0f0f0f;
+  z-index: 3000;
+  margin: 0 auto;
+  place-content: center;
+  position: fixed;
+}
+
+.text-load {
+  padding-top: 20px;
+  position: relative;
+  color: #fff;
+  margin-top: 2em;
+  letter-spacing: 1em;
+  text-transform: uppercase;
+}
+
+.content-loader {
+  width: 180px;
+  height: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.content-loader div {
+  width: 30px;
+  height: 30px;
+  background-color: #fff;
+  animation: salto 1s alternate infinite;
+}
+
+.content-loader div:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.content-loader div:nth-child(3) {
+  animation-delay: 0.4s;
+}
+.content-loader div:nth-child(4) {
+  animation-delay: 0.6s;
+}
+@keyframes salto {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+
+
 .error-text{
   text-shadow: 0px 0px 5px #d6c0ec, 0px 0px 10px #252427, 0px 0px 10px #d5d1da,
     0px 0px 20px #dedbe0;
