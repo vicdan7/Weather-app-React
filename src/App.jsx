@@ -90,7 +90,7 @@ function App() {
           Search
         </button>
       </form>
-      {error && <p className="error-text"> 🚫🚨City Not Found 🚨🚫</p>}
+      {error && <p className="error-text"> 🚫City Not Found🚫</p>}
       {weat ? (
         <WeatherCard weat={weat} temperature={temperature} />
       ) : (

@@ -2,11 +2,6 @@
   box-sizing: border-box;
 }
 
-body {
-  background-color: black;
-  color: black;
-}
-
 .App {
   width: 100%;
   min-height: 100vh;
@@ -135,4 +130,13 @@ h5 {
 .load-style{
   text-shadow: 0px 0px 5px #b393d3, 0px 0px 10px #b393d3, 0px 0px 10px #b393d3,
     0px 0px 20px #b393d3;
+}
+
+.error-text{
+  text-shadow: 0px 0px 5px #d6c0ec, 0px 0px 10px #252427, 0px 0px 10px #d5d1da,
+    0px 0px 20px #dedbe0;
+    color: black;
+    font-size: 30px;
+    background-color: rgba(255, 255, 255, 0.425);
+    border-radius: 30px
 }
